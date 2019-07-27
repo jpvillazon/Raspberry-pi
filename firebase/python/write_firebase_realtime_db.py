@@ -14,9 +14,9 @@ config = {
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
-data = {“numerico”: 80, “texto”:”Texto de prueba“, “decimales”: 123.45,”logico”: False}
-db.child(“database”).set(data)
-db.child(“database”).push(data)
+data = {"integer": 80, "string":"Test String", "float": 123.45,"bool": False}
+db.child("database").set(data)
+db.child("database").push(data)
 
-data = {“numerico”: 10, “texto”:”Texto de prueba modificado“, “decimales”: 543.21,”logico”: True}
-db.child(“database”).update(data)
+data = {"integer": 10, "string":"Test String Updated", "float": 543.21,"bool": True}
+db.child("database").update(data)
