@@ -39,7 +39,7 @@
 	  
     </div>
   <script>
-	var db = firebase.database().ref('sensor_temperatura').set({activado:true,temperatura:233.21,fecha:'10/10/10'}) //creamos la coleccion de la base de datos 
+	//var db = firebase.database().ref('database').set({numerico:123,decimal:233.21,texto:'10/10/10',logico:false}) 
 	
 	var db = firebase.database().ref('database');
 	
@@ -48,29 +48,29 @@
 		logico_input.checked=data.val().logico;
 		numerico_input.value=data.val().numerico;
 		texto_input.value=data.val().texto;
-    decimal_input.value=data.val().decimal;
-		
+    		decimal_input.value=data.val().decimal;
 	})
 	
 	function numerico_update(numerico_textbox)
-    {
-      db.update({numerico:numerico_textbox.value});
-    }
+	    {
+	      db.update({numerico:numerico_textbox.value});
+	    }
 
-  function decimal_update(decimal_textbox)
-    {
-      db.update({numerico:decimal_textbox.value});
-    }
-	
+	function decimal_update(decimal_textbox)
+	    {
+	      db.update({numerico:decimal_textbox.value});
+	    }
+
 	function texto_update(text_textbox)
-    {
-        db.update({texto:text_textbox.value});
-    }
+	    {
+	      db.update({texto:text_textbox.value});
+	    }
 
 	function logico_update(logico_chkbox)
-    {
-		db.update({logico:logico_chkbox.checked});        
-    }
-  </script>
+	    {
+	      db.update({logico:logico_chkbox.checked});        
+	    }
+
+    </script>
   </body>
 </html>
